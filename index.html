@@ -5,21 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ajay Thakare — Android & Backend Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Bitcount+Grid+Single+Ink&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Exo+2:wght@400;500;600;700;800&family=Ubuntu:wght@300;400;500;700&family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Bitcount+Grid+Single+Ink&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --bg: #0a0a0a;
       --bg2: #111111;
-      --bg3: #181818;
+      --bg3: #1a1010;
       --border: rgba(255,255,255,0.07);
-      --text: #e8e8e8;
-      --muted: #555;
-      --accent: #c8f060;
-      --accent2: #60f0c8;
-      --font-display: 'Syne', sans-serif;
+      --text: #ede8e8;
+      --muted: #5a5050;
+      --accent: #e8314a;
+      --accent2: #ff7a5c;
+      --font-display: 'Ubuntu', sans-serif;
+      --font-heading: 'Exo 2', sans-serif;
       --font-mono: 'DM Mono', monospace;
+      --font-bebas: 'Bebas Neue', sans-serif;
       --font-bit: 'Bitcount Grid Single Ink', monospace;
     }
 
@@ -48,7 +50,7 @@
     .cursor-ring {
       position: fixed;
       width: 36px; height: 36px;
-      border: 1px solid rgba(200,240,96,0.35);
+      border: 1px solid rgba(232,49,74,0.35);
       border-radius: 50%;
       pointer-events: none;
       z-index: 9998;
@@ -86,10 +88,10 @@
     }
 
     .nav-logo {
-      font-family: var(--font-bit);
+      font-family: 'Bebas Neue', sans-serif;
       font-size: 1.2rem;
       color: var(--accent);
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
     }
 
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
@@ -134,13 +136,13 @@
 
     .hero-glow {
       position: absolute; width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(200,240,96,0.07) 0%, transparent 65%);
+      background: radial-gradient(circle, rgba(232,49,74,0.09) 0%, transparent 65%);
       top: -200px; right: -100px; pointer-events: none;
       animation: glowPulse 6s ease-in-out infinite;
     }
     .hero-glow2 {
       position: absolute; width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(96,240,200,0.05) 0%, transparent 65%);
+      background: radial-gradient(circle, rgba(255,122,92,0.06) 0%, transparent 65%);
       bottom: -100px; left: 50px; pointer-events: none;
       animation: glowPulse 8s ease-in-out infinite reverse;
     }
@@ -174,16 +176,17 @@
       animation: dotBlink 2.2s ease-in-out infinite;
     }
     @keyframes dotBlink {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(200,240,96,0.5); }
-      50% { opacity: 0.5; box-shadow: 0 0 0 7px rgba(200,240,96,0); }
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(232,49,74,0.5); }
+      50% { opacity: 0.5; box-shadow: 0 0 0 7px rgba(232,49,74,0); }
     }
 
     .hero-name {
-      font-size: clamp(3.8rem, 7.5vw, 6.5rem); font-weight: 800;
-      line-height: 0.92; letter-spacing: -0.035em; margin-bottom: 1.8rem;
+      font-family: 'Black Ops One', sans-serif;
+      font-size: clamp(5rem, 10vw, 9rem); font-weight: 400;
+      line-height: 0.88; letter-spacing: 0.02em; margin-bottom: 2.2rem;
       opacity: 0; animation: fadeUp 0.8s ease 0.45s forwards;
     }
-    .hero-name .outline { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.18); }
+    .hero-name .outline { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.15); }
     .hero-name .accent-word { color: var(--accent); }
 
     .hero-desc {
@@ -206,7 +209,7 @@
       letter-spacing: 0.06em;
       transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
     }
-    .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(200,240,96,0.2); }
+    .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,49,74,0.25); }
 
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 0.5rem;
@@ -222,7 +225,7 @@
       padding-top: 2rem; border-top: 1px solid var(--border);
       opacity: 0; animation: fadeUp 0.8s ease 0.9s forwards;
     }
-    .stat-num { font-family: var(--font-bit); font-size: 2rem; color: var(--accent); letter-spacing: 0.05em; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--accent); letter-spacing: 0.08em; }
     .stat-label {
       font-family: var(--font-mono); font-size: 0.6rem; color: var(--muted);
       letter-spacing: 0.12em; text-transform: uppercase; margin-top: 0.25rem;
@@ -239,7 +242,7 @@
     .avatar-frame:hover img { filter: grayscale(0%) contrast(1.05); }
     .avatar-frame::before {
       content: ''; position: absolute; inset: -1px; border-radius: 3px;
-      background: linear-gradient(145deg, rgba(200,240,96,0.5) 0%, transparent 45%, rgba(96,240,200,0.3) 100%);
+      background: linear-gradient(145deg, rgba(232,49,74,0.6) 0%, transparent 45%, rgba(255,122,92,0.3) 100%);
       z-index: -1;
     }
     .avatar-badge {
@@ -251,32 +254,33 @@
     .badge-status { color: var(--accent); font-size: 0.75rem; display: flex; align-items: center; gap: 0.4rem; }
 
     /* SECTIONS */
-    section { padding: 6rem 3rem; }
+    section { padding: 8rem 4rem; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
 
     .section-label {
       font-family: var(--font-mono); font-size: 0.6rem;
       color: var(--accent); letter-spacing: 0.22em; text-transform: uppercase;
-      margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem;
+      margin-bottom: 1rem; display: flex; align-items: center; gap: 0.8rem;
     }
     .section-label::after {
       content: ''; flex: 1; height: 1px;
       background: linear-gradient(90deg, var(--border), transparent); max-width: 160px;
     }
     .section-title {
-      font-size: clamp(2.2rem, 4.5vw, 3.2rem); font-weight: 800;
-      letter-spacing: -0.03em; margin-bottom: 3.5rem; line-height: 1;
+      font-family: var(--font-heading);
+      font-size: clamp(3.5rem, 6vw, 5.5rem); font-weight: 400;
+      letter-spacing: 0.02em; margin-bottom: 4rem; line-height: 0.95;
     }
 
     /* ABOUT */
-    #about { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 4rem 3rem; }
+    #about { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 5rem 4rem; }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); }
-    .about-cell { background: var(--bg2); padding: 2rem; transition: background 0.3s; }
+    .about-cell { background: var(--bg2); padding: 2.5rem; transition: background 0.3s; }
     .about-cell:hover { background: var(--bg3); }
     .about-cell-label { font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.8rem; }
     .about-cell-value { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 0.3rem; }
     .about-cell-sub { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); line-height: 1.65; }
-    .cgpa-highlight { font-family: var(--font-bit); font-size: 2.2rem; color: var(--accent); letter-spacing: 0.05em; line-height: 1; margin-bottom: 0.3rem; }
+    .cgpa-highlight { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--accent); letter-spacing: 0.08em; line-height: 1; margin-bottom: 0.3rem; }
 
     /* SKILLS */
     #skills { background: var(--bg); }
@@ -286,10 +290,10 @@
     .skill-cat-name { font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.2rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border); }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; }
     .skill-tag { font-family: var(--font-mono); font-size: 0.7rem; padding: 0.28rem 0.65rem; border: 1px solid var(--border); border-radius: 2px; color: var(--muted); transition: border-color 0.2s, color 0.2s, background 0.2s; cursor: default; }
-    .skill-tag:hover { border-color: var(--accent); color: var(--accent); background: rgba(200,240,96,0.04); }
+    .skill-tag:hover { border-color: var(--accent); color: var(--accent); background: rgba(232,49,74,0.04); }
 
     /* CERTIFICATIONS */
-    #certs { background: var(--bg2); padding: 3rem; border-top: 1px solid var(--border); }
+    #certs { background: var(--bg2); padding: 4rem; border-top: 1px solid var(--border); }
     .certs-scroll { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.5rem; }
     .cert-pill { font-family: var(--font-mono); font-size: 0.68rem; padding: 0.4rem 0.9rem; border: 1px solid var(--border); border-radius: 20px; color: var(--muted); transition: border-color 0.2s, color 0.2s; cursor: default; }
     .cert-pill:hover { border-color: var(--accent2); color: var(--accent2); }
@@ -305,24 +309,24 @@
       transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
     }
     .project-card:hover::before { transform: scaleX(1); }
-    .project-num { font-family: var(--font-bit); font-size: 3.5rem; color: rgba(255,255,255,0.03); position: absolute; top: 0.8rem; right: 1.2rem; line-height: 1; pointer-events: none; }
+    .project-num { font-family: 'Bebas Neue', sans-serif; font-size: 3.5rem; color: rgba(255,255,255,0.03); position: absolute; top: 0.8rem; right: 1.2rem; line-height: 1; pointer-events: none; }
     .project-tag { font-family: var(--font-mono); font-size: 0.6rem; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; }
-    .project-title { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; line-height: 1.2; }
+    .project-title { font-family: var(--font-heading); font-size: 2rem; font-weight: 400; letter-spacing: 0.02em; margin-bottom: 1rem; line-height: 1.1; }
     .project-desc { font-family: var(--font-mono); font-size: 0.76rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.2rem; }
     .project-bullets { list-style: none; margin-bottom: 1.5rem; }
     .project-bullets li { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); line-height: 1.7; padding-left: 1.2rem; position: relative; }
     .project-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 0.6rem; top: 0.1rem; }
     .project-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.8rem; }
-    .stack-tag { font-family: var(--font-mono); font-size: 0.62rem; padding: 0.22rem 0.55rem; background: rgba(200,240,96,0.06); color: var(--accent); border-radius: 2px; letter-spacing: 0.04em; }
+    .stack-tag { font-family: var(--font-mono); font-size: 0.62rem; padding: 0.22rem 0.55rem; background: rgba(232,49,74,0.07); color: var(--accent); border-radius: 2px; letter-spacing: 0.04em; }
     .project-link { font-family: var(--font-mono); font-size: 0.7rem; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; display: inline-flex; align-items: center; gap: 0.3rem; transition: color 0.2s; }
     .project-link:hover { color: var(--accent); }
     .project-featured { grid-column: 1 / -1; }
 
     /* HACKATHONS */
-    #hackathons { background: var(--bg2); padding: 3rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    #hackathons { background: var(--bg2); padding: 4rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .hack-items { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
-    .hack-item { flex: 1; min-width: 240px; background: var(--bg3); border: 1px solid var(--border); padding: 1.2rem 1.5rem; border-radius: 2px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 1rem; transition: border-color 0.2s, background 0.2s; }
-    .hack-item:hover { border-color: rgba(200,240,96,0.3); background: rgba(200,240,96,0.03); }
+    .hack-item { flex: 1; min-width: 240px; background: var(--bg3); border: 1px solid var(--border); padding: 1.4rem 1.6rem; border-radius: 2px; font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); display: flex; align-items: center; gap: 1rem; transition: border-color 0.2s, background 0.2s; }
+    .hack-item:hover { border-color: rgba(232,49,74,0.4); background: rgba(232,49,74,0.04); }
     .hack-icon { font-size: 1.1rem; }
     .hack-name { color: var(--text); font-size: 0.8rem; font-weight: 600; margin-bottom: 0.2rem; }
 
@@ -332,9 +336,9 @@
     .contact-info p { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); line-height: 1.9; margin-bottom: 2.5rem; }
     .contact-links { display: flex; flex-direction: column; gap: 0.5rem; }
     .contact-link { display: flex; align-items: center; gap: 1rem; font-family: var(--font-mono); font-size: 0.75rem; color: var(--muted); text-decoration: none; padding: 0.9rem 1rem; border: 1px solid var(--border); border-radius: 2px; transition: border-color 0.2s, color 0.2s, background 0.2s; }
-    .contact-link:hover { border-color: rgba(200,240,96,0.3); color: var(--text); background: rgba(200,240,96,0.03); }
+    .contact-link:hover { border-color: rgba(232,49,74,0.4); color: var(--text); background: rgba(232,49,74,0.04); }
     .contact-link-icon { width: 30px; height: 30px; background: var(--bg3); border-radius: 2px; display: flex; align-items: center; justify-content: center; font-size: 0.78rem; flex-shrink: 0; transition: background 0.2s; }
-    .contact-link:hover .contact-link-icon { background: rgba(200,240,96,0.08); }
+    .contact-link:hover .contact-link-icon { background: rgba(232,49,74,0.1); }
 
     .contact-form { display: flex; flex-direction: column; gap: 1rem; }
     .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
@@ -471,7 +475,7 @@
         <div class="skill-cat-name">Android Dev</div>
         <div class="skill-tags">
           <span class="skill-tag">Java</span><span class="skill-tag">Kotlin</span>
-          <span class="skill-tag">Android SDK</span><span class="skill-tag">Firebase</span>
+          <span class="skill-tag">Android SDK</span>
           <span class="skill-tag">Android Studio</span><span class="skill-tag">RecyclerView</span>
           <span class="skill-tag">Fragments</span><span class="skill-tag">Material Design</span>
         </div>
@@ -480,23 +484,26 @@
         <div class="skill-cat-name">Backend & Web</div>
         <div class="skill-tags">
           <span class="skill-tag">Node.js</span><span class="skill-tag">Express.js</span>
-          <span class="skill-tag">REST APIs</span><span class="skill-tag">Spring Framework</span>
-          <span class="skill-tag">MongoDB</span><span class="skill-tag">Auth Flows</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">MongoDB</span><span class="skill-tag">Firebase</span>
+          <span class="skill-tag">JWT Auth</span>
         </div>
       </div>
       <div class="skill-category reveal reveal-d2">
-        <div class="skill-cat-name">Frontend & Design</div>
+        <div class="skill-cat-name">Frontend</div>
         <div class="skill-tags">
-          <span class="skill-tag">React</span><span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">Tailwind CSS</span><span class="skill-tag">Responsive Design</span>
-          <span class="skill-tag">Figma</span><span class="skill-tag">UI/UX</span>
+          <span class="skill-tag">HTML</span><span class="skill-tag">CSS</span>
+          <span class="skill-tag">JavaScript</span><span class="skill-tag">React</span>
+          <span class="skill-tag">Responsive Design</span>
+          <span class="skill-tag">Figma</span>
         </div>
       </div>
       <div class="skill-category reveal reveal-d3">
         <div class="skill-cat-name">CS Fundamentals</div>
         <div class="skill-tags">
           <span class="skill-tag">DSA</span><span class="skill-tag">OOP</span>
-          <span class="skill-tag">SDLC</span><span class="skill-tag">Git & GitHub</span>
+          <span class="skill-tag">DBMS</span><span class="skill-tag">OS</span>
+          <span class="skill-tag">Git & GitHub</span>
           <span class="skill-tag">SQL</span><span class="skill-tag">Python</span>
         </div>
       </div>
@@ -509,15 +516,12 @@
   <div class="section-inner">
     <div class="section-label reveal">02.5 — Credentials</div>
     <div class="certs-scroll reveal">
-      <span class="cert-pill">Amazon Junior Software Developer</span>
-      <span class="cert-pill">Full Stack Web Development</span>
-      <span class="cert-pill">Application Development</span>
-      <span class="cert-pill">Programming with Java</span>
-      <span class="cert-pill">Database Management — Java & SQL</span>
-      <span class="cert-pill">Data Structures & Algorithms</span>
-      <span class="cert-pill">Generative AI in Software Dev</span>
-      <span class="cert-pill">Getting Started with Git & GitHub</span>
-      <span class="cert-pill">Assertiveness Skills</span>
+      <span class="cert-pill">Amazon Jr. Software Developer</span>
+      <span class="cert-pill">Java Full Stack Virtual Internship — AICTE</span>
+      <span class="cert-pill">Android Development — Udemy</span>
+      <span class="cert-pill">IBM Certification</span>
+      <span class="cert-pill">HP LIFE</span>
+      <span class="cert-pill">L&T EduTech</span>
     </div>
   </div>
 </div>
@@ -543,24 +547,6 @@
           <span class="stack-tag">Node.js</span><span class="stack-tag">React</span>
           <span class="stack-tag">MongoDB</span><span class="stack-tag">Express</span>
           <span class="stack-tag">Figma</span><span class="stack-tag">REST API</span>
-        </div>
-        <a href="https://github.com/maxhawkinz" target="_blank" class="project-link">GitHub →</a>
-      </div>
-
-      <div class="project-card reveal reveal-d1">
-        <div class="project-num">02</div>
-        <div class="project-tag">Ongoing · Android</div>
-        <div class="project-title">Android Dev Portfolio</div>
-        <p class="project-desc">A series of Android applications built to deepen mobile engineering skills using modern architecture patterns and best practices.</p>
-        <ul class="project-bullets">
-          <li>Built multiple apps in Java & Kotlin with Firebase for real-time data and auth</li>
-          <li>Applied Material Design with modular, scalable code architecture</li>
-          <li>Explored RecyclerView, fragments, and activity lifecycle management</li>
-        </ul>
-        <div class="project-stack">
-          <span class="stack-tag">Kotlin</span><span class="stack-tag">Java</span>
-          <span class="stack-tag">Android SDK</span><span class="stack-tag">Firebase</span>
-          <span class="stack-tag">MVVM</span><span class="stack-tag">Material Design 3</span>
         </div>
         <a href="https://github.com/maxhawkinz" target="_blank" class="project-link">GitHub →</a>
       </div>
